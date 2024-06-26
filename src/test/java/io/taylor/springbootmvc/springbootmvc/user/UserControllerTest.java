@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
@@ -28,14 +29,27 @@ public class UserControllerTest {
     }
 
     @Test
-    public void createUser_JSON() throws Exception {
+    public void createUser_XML() throws Exception {
         String userJson = "{\"username\":\"taylor\", \"password\":\"1234\"}";
         mockMvc.perform(post("/users/create")
                     .contentType(MediaType.APPLICATION_JSON_UTF8)
-                    .accept(MediaType.APPLICATION_JSON_UTF8)
+                    .accept(MediaType.APPLICATION_XML)
                     .content(userJson))
+                .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username", equalTo("taylor")))
-                .andExpect(jsonPath("$.password", equalTo("1234")));
+                .andExpect(xpath("/User/username").string("taylor"))
+                .andExpect(xpath("/User/password").string("1234"));
     }
+
+//    @Test
+//    public void createUser_JSON() throws Exception {
+//        String userJson = "{\"username\":\"taylor\", \"password\":\"1234\"}";
+//        mockMvc.perform(post("/users/create")
+//                    .contentType(MediaType.APPLICATION_JSON_UTF8)
+//                    .accept(MediaType.APPLICATION_JSON_UTF8)
+//                    .content(userJson))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("$.username", equalTo("taylor")))
+//                .andExpect(jsonPath("$.password", equalTo("1234")));
+//    }
 }

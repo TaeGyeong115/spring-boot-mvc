@@ -27,6 +27,7 @@ dependencies {
     implementation 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     compileOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
