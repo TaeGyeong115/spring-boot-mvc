@@ -1,4 +1,4 @@
-package io.taylor.springbootmvc;
+package io.taylor.springbootmvc.mysql;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 @Component
-public class H2Runner implements ApplicationRunner {
+public class MySQLRunner implements ApplicationRunner {
     @Autowired
     DataSource dataSource;
 
@@ -20,17 +20,17 @@ public class H2Runner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        try(Connection connection = dataSource.getConnection()) {
-            connection.getMetaData().getURL();
-            connection.getMetaData().getUserName();
+        try (Connection connection = dataSource.getConnection()) {
+            System.out.println(dataSource.getClass());
+            System.out.println("Database URL: " + connection.getMetaData().getURL());
+            System.out.println("Database User: " + connection.getMetaData().getUserName());
 
             Statement statement = connection.createStatement();
-            String sql = "CREATE TABLE USERS(ID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (ID))";
-            statement.executeUpdate(sql);
+//            String sql = "CREATE TABLE USERS(ID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (ID))";
+//            statement.executeUpdate(sql);
             // 에러 시 롤백 구문 추가되어야 함
         }
-
-        jdbcTemplate.execute("INSERT INTO USERS VALUES (1, 'taylor')");
+//        jdbcTemplate.execute("INSERT INTO USERS VALUES (1, 'taylor')");
         // JdbcTemplate 사용시 에러 문구 가독성이 더 좋음
     }
 }
