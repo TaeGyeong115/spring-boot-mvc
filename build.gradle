@@ -31,6 +31,7 @@ dependencies {
     runtimeOnly 'org.webjars:jquery:3.7.1'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'net.sourceforge.htmlunit:htmlunit'
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
