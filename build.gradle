@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
     runtimeOnly 'org.webjars:jquery:3.7.1'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'net.sourceforge.htmlunit:htmlunit'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
