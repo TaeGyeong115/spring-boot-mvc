@@ -1,4 +1,4 @@
-package io.taylor.springbootmvc.springbootmvc.user;
+package io.taylor.springbootmvc.user;
 
 import io.taylor.springbootmvc.user.UserController;
 import org.junit.Test;
