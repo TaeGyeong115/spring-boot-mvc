@@ -6,11 +6,22 @@ spring:
     url: jdbc:postgresql://localhost:5432/springboot?userSSL=false
     username: taylor
     password: pass
+    platform: postgresql
 
   jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation=true:
+
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
+      generate-ddl: false
+# 운영용
+#      ddl-auto: validate
+#      generate-ddl: false
 
 # h2 setting
 #    url: jdbc:h2:mem:testdb
