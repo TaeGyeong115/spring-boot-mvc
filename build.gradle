@@ -45,6 +45,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-database-postgresql'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'junit:junit'

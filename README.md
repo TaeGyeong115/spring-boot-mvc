@@ -30,3 +30,13 @@ docker run -p 6379:6379 --name redis_boot -d redis
 docker exec -i -t redis_boot redis-cli
 keys *
 ```
+
+---
+
+### MongoDB
+```
+docker run -p 27017:27017 --name mongo_boot -d mongo
+
+docker exec -i -t mongo_boot bash
+mongosh
+```
