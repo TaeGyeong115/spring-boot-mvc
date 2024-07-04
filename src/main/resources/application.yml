@@ -12,6 +12,9 @@ spring:
     locations: classpath:/db/migration
     enabled: true
 
+  main:
+    allow-bean-definition-overriding: true
+
   jpa:
     properties:
       hibernate:
@@ -22,6 +25,7 @@ spring:
     hibernate:
       ddl-auto: validate
       generate-ddl: false
+
 # 운영용
 #      ddl-auto: validate
 #      generate-ddl: false

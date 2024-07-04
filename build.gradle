@@ -44,6 +44,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'
 
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'junit:junit'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
