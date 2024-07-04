@@ -19,5 +19,4 @@ docker run -p 5432:5432 -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=taylor -e POS
 docker exec -i -t postgres_boot bash
 su - postgres
 psql --username taylor --dbname springboot
-psql springboot
 ```

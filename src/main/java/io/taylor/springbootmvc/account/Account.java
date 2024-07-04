@@ -1,18 +1,19 @@
 package io.taylor.springbootmvc.account;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
+@Table(name = "account")
 public class Account {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String email;
+
+    private boolean active;
 
     private String username;
 
