@@ -13,6 +13,4 @@ public class SampleController {
         model.addAttribute("name", "taylor");
         return "hello";
     }
-
-
 }

@@ -40,3 +40,14 @@ docker run -p 27017:27017 --name mongo_boot -d mongo
 docker exec -i -t mongo_boot bash
 mongosh
 ```
+
+---
+
+### Neo4j
+```
+docker run -p 7474:7474 -p 7687:7687 -d --name neo4j_boot neo4j
+
+docker exec -i -t neo4j_boot bash
+```
+
+http://localhost:7474/browser
